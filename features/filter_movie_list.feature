@@ -37,7 +37,7 @@ Scenario: restrict to movies with 'PG' or 'R' ratings
    And I should not see "Aladdin"
    And I should see "Raiders of the Lost Ark"
    And I should see "Amelie"
-   And I should see "The terminator"
+   And I should see "The Terminator"
    And I should not see "Chicken Run"
    And I should not see "Chocolat"
   
