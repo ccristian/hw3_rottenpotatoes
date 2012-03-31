@@ -42,8 +42,21 @@ Scenario: restrict to movies with 'PG' or 'R' ratings
    And I should not see "Chocolat"
   
 
+Scenario: restrict to movies with 'R' or 'PG' ratings
+  Given I check the following ratings: R, PG
+  And I uncheck the following ratings: 
+  When I press "Refresh"
+  Then I should see the following ratings:  R,PG
+  And I should not see the following ratings: PG-13,G,NC-17
+
 Scenario: no ratings selected
   # see assignment
+  Given I uncheck the following ratings: R,PG,PG-13,G,NC-17
+  When I press "Refresh"
+  Then I should see no movies
 
 Scenario: all ratings selected
   # see assignment
+  Given I check the following ratings: R,PG,PG-13,G,NC-17
+  When I press "Refresh"
+  Then I should see all of the movies
