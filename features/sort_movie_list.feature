@@ -21,9 +21,17 @@ Background: movies have been added to database
 
   And I am on the RottenPotatoes home page
 
+
 Scenario: sort movies alphabetically
-  # your steps here
+  Given I am on the RottenPotatoes home page
+  And I check the following ratings: R,PG,PG-13,G,NC-17
+  When I press "Refresh"
+  And I follow "title_header"
+  Then I should see "Aladdin" before "Chocolat"
 
 Scenario: sort movies in increasing order of release date
-  # your steps here
-
+  Given I am on the RottenPotatoes home page
+  And I check the following ratings: R,PG,PG-13,G,NC-17
+  When I press "Refresh"
+  And I follow "release_date_header"
+  Then I should see "Chocolat" before "The Help"
