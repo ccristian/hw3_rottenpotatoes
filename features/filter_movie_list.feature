@@ -33,7 +33,7 @@ Scenario: restrict to movies with 'PG' or 'R' ratings
    And I uncheck "ratings_G"
    And I uncheck "ratings_NC-17"
    And I press "Refresh"
-   Then I should see "The Incredibles"'
+   Then I should see "The Incredibles"
    And I should not see "Aladdin"
    And I should see "Raiders of the Lost Ark"
    And I should see "Amelie"
